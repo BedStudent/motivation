@@ -1,13 +1,72 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_quotes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/quotes */ "./src/modules/quotes.js");
 
+(0,_modules_quotes__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+/***/ }),
+
+/***/ "./src/modules/quotes.js":
+/*!*******************************!*\
+  !*** ./src/modules/quotes.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service */ "./src/modules/service.js");
+
+var motyvacija = function motyvacija() {
+  (0,_service__WEBPACK_IMPORTED_MODULE_0__["default"])().then(function (result) {
+    for (var object in result) {
+      var div = document.createElement('div');
+      if (object === '0') {
+        div.classList = "carousel-item active";
+      } else {
+        div.classList = "carousel-item";
+      }
+      document.querySelector('.carousel-inner').appendChild(div);
+      for (var key in result[object]) {
+        //console.log(`${key}: ${result[object][key]}`)
+        var p = document.createElement('p');
+        p.textContent = "".concat(result[object][key]);
+        div.appendChild(p);
+      }
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (motyvacija);
+
+/***/ }),
+
+/***/ "./src/modules/service.js":
+/*!********************************!*\
+  !*** ./src/modules/service.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var uzrasai = function uzrasai() {
+  var url = 'https://strangerthings-quotes.vercel.app/api/quotes/50';
+  return fetch("".concat(url)).then(function (response) {
+    return response.json();
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (uzrasai);
 
 /***/ }),
 
@@ -17,7 +76,6 @@
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -83,6 +141,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

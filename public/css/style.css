@@ -10819,3 +10819,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.carousel-inner {
+  background-color: rgb(247, 241, 234);
+  height: 200px;
+  text-align: center;
+  padding: 50px;
+}
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  background-color: bisque;
+  margin: 10px;
+}
